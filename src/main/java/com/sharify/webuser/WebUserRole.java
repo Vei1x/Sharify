@@ -1,2 +1,6 @@
-package com.sharify.webuser;public enum WebUserRole {
+package com.sharify.webuser;
+
+public enum WebUserRole {
+    USER,
+    ADMIN
 }
