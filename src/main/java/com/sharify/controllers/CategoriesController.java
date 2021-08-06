@@ -1,6 +1,7 @@
 package com.sharify.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,32 +15,32 @@ public class CategoriesController {
     }
 
     @GetMapping("/transport")
-    public String transport(){
-        return "";
+    public String transport(Model model){
+        return "list";
     }
 
     @GetMapping("/electronics")
-    public String electronics(){
-        return "";
+    public String electronics(Model model){
+        return "list";
     }
 
         @GetMapping("/entertainment")
-    public String entertainment(){
-        return "";
+    public String entertainment(Model model){
+        return "list";
     }
 
         @GetMapping("/construction")
-    public String construction(){
-        return "";
+    public String construction(Model model){
+        return "list";
     }
 
         @GetMapping("/home-stuff")
-    public String homeStuff(){
-        return "";
+    public String homeStuff(Model model){
+        return "list";
     }
 
         @GetMapping("/other")
-    public String other(){
-        return "";
+    public String other(Model model){
+        return "list";
     }
 }
