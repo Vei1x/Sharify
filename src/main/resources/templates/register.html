@@ -36,12 +36,6 @@
 <!-- ========================= SECTION FEATURES ========================= -->
 <section class="section-features bg2 padding-y-lg" id="features">
     <div class="container">
-        <div th:if="${param.error}">
-            Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
         <div class="row justify-content-center">
             <div id="id02">
                 <div class="card">
@@ -60,6 +54,9 @@
                                 <button class="btn btn-primary btn-block" type="submit"> Reģistrēties</button>
                             </div> <!-- form-group// -->
                         </form>
+                        <div style="color: red; text-align: center;" th:text="${message}">
+                            Message
+                        </div>
                     </article>
                 </div> <!-- card.// -->
             </div>
