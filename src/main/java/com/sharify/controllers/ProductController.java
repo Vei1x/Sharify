@@ -48,7 +48,7 @@ public class ProductController {
                       @RequestParam String email) {
         Product product = new Product(category, title, price, bail, seller, address, city, phoneNumber, email);
         productRepo.save(product);
-        return "redirect:/category/other";
+        return "redirect:/category/all";
     }
 
     @PostMapping("/product/{id}")

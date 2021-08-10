@@ -43,6 +43,8 @@
 }
 
 html {
+	height: 100%;
+	margin: 0;
 	font-family: sans-serif;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -70,6 +72,7 @@ section {
 }
 
 body {
+	height: 100%;
 	margin: 0;
 	font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-size: 1rem;
@@ -78,6 +81,17 @@ body {
 	color: #212529;
 	text-align: left;
 	background-color: #fff
+}
+.wrapper {
+	min-height: 100%;
+
+	/* Equal to height of footer */
+	/* But also accounting for potential margin-bottom of last child */
+	margin-bottom: -90px;
+}
+.footer,
+.push {
+	height: 50px;
 }
 
 [tabindex="-1"]:focus {
