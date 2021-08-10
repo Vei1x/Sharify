@@ -36,17 +36,11 @@
 <!-- ========================= SECTION FEATURES ========================= -->
 <section class="section-features bg2 padding-y-lg" id="features">
     <div class="container">
-        <div th:if="${param.error}">
-            Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
         <div class="row justify-content-center">
             <div id="id02">
                 <div class="card">
                     <article class="card-body card-body-w350" style="width: 355px">
-                        <h4 class="card-title mb-4 mt-1">Reģistrēties</h4>
+                        <h4 class="card-title mb-4 mt-1">Reģistrēties Sharify</h4>
                         <form action="/register" method="post">
                             <div class="form-group">
                                 <label>Jūsu e-pasts</label>
@@ -54,11 +48,19 @@
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <label>Parole</label>
-                                <input name="password" class="form-control" placeholder="******" type="password">
+                                <input name="password" class="form-control" placeholder="password" type="password">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <button class="btn btn-primary btn-block" type="submit"> Reģistrēties</button>
                             </div> <!-- form-group// -->
+                            <div class="text-danger" th:text="${message}"> Message
+                            </div> <!-- form-group// -->
+                            <div th:if="${param.error}">
+                                <p class="text-danger">Invalid username and password. </p>
+                            </div>
+                            <div th:if="${param.logout}">
+                                <p class="text-danger">You have been logged out. </p>
+                            </div>
                         </form>
                     </article>
                 </div> <!-- card.// -->
