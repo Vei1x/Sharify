@@ -22,11 +22,15 @@
     <script th:src="@{/js/script.js}" type="text/javascript"></script>
 </head>
 <body>
+<!-- ========================= HEADER ========================= -->
 <header th:insert="fragments/header :: header"></header>
+<!-- ========================= HEADER END ========================= -->
+
 
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section th:insert="fragments/hero :: hero"></section>
 <!-- ========================= SECTION INTRO END// ========================= -->
+
 
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y">
@@ -45,7 +49,8 @@
                                 </header>
                                 <div class="filter-content collapse show" id="collapse22" style="">
                                     <div class="card-body">
-                                        <form action="search" class="pb-3" method="post">
+                                        <form class="pb-3" method="post"
+                                              th:action="@{__${#httpServletRequest.requestURI}__}">
                                             <div class="input-group">
                                                 <input class="form-control" name="search" placeholder="Mēklēt"
                                                        type="text">
@@ -129,11 +134,13 @@
                                     <br>
                                     <div th:if="${#authorization.expression('hasRole(''USER'')')}">
                                         <a class="btn btn-secondary1" href="#"> Rediģēt </a>
-                                    <form method="post" th:action="@{/category/product/{id}(id=${product.getId()})}">
-                                        <button class="btn btn-outline-danger btn-round" type="submit" value="Delete"> ×
-                                            Remove
-                                        </button>
-                                    </form>
+                                        <form method="post"
+                                              th:action="@{/category/product/{id}(id=${product.getId()})}">
+                                            <button class="btn btn-outline-danger btn-round" type="submit"
+                                                    value="Delete"> ×
+                                                Remove
+                                            </button>
+                                        </form>
                                     </div>
                                 </div> <!-- action-wrap.// -->
                             </aside> <!-- col.// -->
@@ -199,21 +206,7 @@
 
 
 <!-- ========================= FOOTER ========================= -->
-<footer class="section-footer bg-dark white">
-    <div class="container">
-        <section class="footer-bottom row">
-            <div class="col-sm-6">
-                <p> Made by Bootcamp Team1 <br> Using Bootstrap</p>
-            </div>
-            <div class="col-sm-6">
-                <p class="text-sm-right">
-                    Copyright &copy 2021 <br>
-                    <a>Sharify portal</a>
-                </p>
-            </div>
-        </section> <!-- //footer-top -->
-    </div><!-- //container -->
-</footer>
+<footer th:insert="fragments/footer :: footer"></footer>
 <!-- ========================= FOOTER END // ========================= -->
 </body>
 </html>
