@@ -8,7 +8,18 @@ public class SharifyController {
 
     @GetMapping("/")
     public String index(){
-        return "index";
+        return "home";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/register")
+    public String registration(){
+        return "register";
+    }
+
 
 }

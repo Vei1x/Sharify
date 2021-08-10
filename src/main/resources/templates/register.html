@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+>
 <head>
     <meta charset="utf-8">
     <meta content="no-cache" http-equiv="pragma"/>
@@ -32,7 +33,6 @@
 <section class="section-features bg2 padding-y-lg" id="features">
     <div class="container">
 
-
         <div th:if="${param.error}">
             Invalid username and password.
         </div>
@@ -40,28 +40,27 @@
             You have been logged out.
         </div>
         <div class="row justify-content-center">
-            <div id="id01">
+            <div id="id02">
                 <div class="card">
-                    <article class="card-body card-body-w350">
-                        <h4 class="card-title mb-4 mt-1">Pieslēgties Mans Sharify</h4>
-                        <form method="post" th:action="@{/login}">
+                    <article class="card-body card-body-w350" style="width: 355px">
+                        <h4 class="card-title mb-4 mt-1">Reģistrēties</h4>
+                        <form>
                             <div class="form-group">
                                 <label>Jūsu e-pasts</label>
-                                <input class="form-control" name="username" placeholder="Email" type="text">
+                                <input class="form-control" name="" placeholder="Email" type="newemail">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <label>Parole</label>
-                                <input class="form-control" name="password" placeholder="******" type="password">
+                                <input class="form-control" placeholder="******" type="newpassword">
                             </div> <!-- form-group// -->
                             <div class="form-group">
-                                <button class="btn btn-primary btn-block" type="submit"> Pieslēgties</button>
+                                <button class="btn btn-primary btn-block" type="submit"> Reģistrēties</button>
                             </div> <!-- form-group// -->
                         </form>
                     </article>
                 </div> <!-- card.// -->
-            </div>  <!-- code-wrap.// -->
+            </div>
         </div>
-    </div>  <!-- code-wrap.// -->
     </div>
 
 </section>
