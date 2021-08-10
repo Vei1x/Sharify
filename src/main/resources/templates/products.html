@@ -91,7 +91,7 @@
                 </div>
             </aside> <!-- col.// -->
             <main class="col-sm-9">
-                <div th:if="${#authorization.expression('hasRole(''USER'')')}"><a class="img-wrap"
+                <div th:if="${#authorization.expression('isAuthenticated()')}"><a class="img-wrap"
                                                                                   href="/category/product/add"><img
                         th:src="@{/images/item.png}"> </a></div>
                 <article class="card card-product">
@@ -133,7 +133,7 @@
                                         <span class="price" th:text="${product.price} + ' EUR'">Price</span><span>/ stundā</span>
                                     </div> <!-- info-price-detail // -->
                                     <br>
-                                    <div th:if="${#authorization.expression('hasRole(''USER'')')}">
+                                    <div th:if="${#authorization.expression('isAuthenticated()')}">
                                         <a class="btn btn-secondary1" href="#"> Rediģēt </a>
                                         <form method="post"
                                               th:action="@{/category/product/{id}(id=${product.getId()})}">

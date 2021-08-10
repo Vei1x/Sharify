@@ -34,10 +34,10 @@
                     <div class="d-flex justify-content-end">
                         <div class="widget-header">
                             <small class="title text-muted">Mans Sharify</small>
-                            <div th:if="${#authorization.expression('hasRole(''USER'')')}">
+                            <div th:if="${#authorization.expression('isAuthenticated()')}">
                                 <a href="/logout">Iziet</a>
                             </div>
-                            <div th:unless="${#authorization.expression('hasRole(''USER'')')}">
+                            <div th:unless="${#authorization.expression('isAuthenticated()')}">
                                 <a href="/login">Ieiet</a>
                                 <span class="dark-transp"> | </span>
                                 <a href="/register"> Reģistrēties</a>
