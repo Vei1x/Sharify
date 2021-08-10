@@ -16,9 +16,9 @@ public class SharifyController {
         return "login";
     }
 
-    @GetMapping("/register")
+    @GetMapping("/registration")
     public String registration(){
-        return "register";
+        return "registration";
     }
 
 

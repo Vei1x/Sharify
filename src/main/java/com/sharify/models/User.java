@@ -8,6 +8,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String useremail;
+    private String email;
     private String password;
+    private String role;
 }

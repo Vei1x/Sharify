@@ -1,6 +1,6 @@
 package com.sharify.repos;
 
-import com.sharify.models.Product;
+import  com.sharify.models.Product;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

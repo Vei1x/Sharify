@@ -46,15 +46,15 @@
             <div id="id02">
                 <div class="card">
                     <article class="card-body card-body-w350" style="width: 355px">
-                        <h4 class="card-title mb-4 mt-1">Reģistrēties</h4>
-                        <form>
+                        <h4 class="card-title mb-4 mt-1">Reģistrēties Sharify</h4>
+                        <form method="post" th:action="@{/registration}">
                             <div class="form-group">
                                 <label>Jūsu e-pasts</label>
-                                <input class="form-control" name="" placeholder="Email" type="newemail">
+                                <input class="form-control" name="" placeholder="Email" type="email">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <label>Parole</label>
-                                <input class="form-control" placeholder="******" type="newpassword">
+                                <input class="form-control" placeholder="******" type="password">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <button class="btn btn-primary btn-block" type="submit"> Reģistrēties</button>
