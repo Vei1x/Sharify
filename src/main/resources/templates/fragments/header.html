@@ -11,19 +11,11 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-8">
-                    <form action="#" class="search-wrap">
+                    <form th:action="@{/category/all}" method="post" class="search-wrap">
                         <div class="input-group w-100">
-                            <input class="form-control" placeholder="Mēklēt" style="width:50%;" type="text">
-                            <select class="custom-select" name="category_name">
-                                <option value="">Visas kategorijas</option>
-                                <option value="content">Elektrotehnika</option>
-                                <option value="content">Transporta noma</option>
-                                <option value="content">Mājai</option>
-                                <option value="content">Atpūta un hobiji</option>
-                                <option value="content">Cits</option>
-                            </select>
+                            <input class="form-control" name="search" placeholder="Mēklēt" style="width:50%;" type="text">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">
+                                <button style="width:57px" class="btn btn-primary" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
