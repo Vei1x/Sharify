@@ -49,8 +49,8 @@
                             <div class="form-group">
                                 <label>Parole</label>
                                 <div style="color:red">
-                                <td><input class="form-control" placeholder="*****" type="text" th:field="*{password}" /></td>
-                                <td  th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                                <input class="form-control" placeholder="*****" type="password" th:field="*{password}" />
+                                    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
                                 </div>
                             </div> <!-- form-group// -->
                             <div class="form-group">
