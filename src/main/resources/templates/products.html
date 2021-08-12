@@ -133,7 +133,7 @@
                                     </div> <!-- info-price-detail // -->
                                     <br>
                                     <div th:if="${#authorization.expression('isAuthenticated()')}">
-                                        <a class="btn btn-secondary1" href="#"> Rediģēt </a>
+                                        <a class="btn btn-secondary1" th:href="@{/category/product/edit/{id}(id=${product.getId()})}">Rediģēt </a>
                                         <form method="post"
                                               th:action="@{/category/product/{id}(id=${product.getId()})}">
                                             <button class="btn btn-outline-danger btn-round" type="submit"

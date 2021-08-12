@@ -57,6 +57,19 @@ public class ProductController {
         return "redirect:/category/all";
     }
 
+    @GetMapping("/product/edit/{id}")
+    public String edit(Model model, @PathVariable("id") Long id, Product product) {
+        model.addAttribute("product", productRepo.getOne(id));
+        return "edit";
+    }
+
+    @PostMapping("/product/edit/{id}")
+    public String edit(@ModelAttribute("product") Product product,
+                         @PathVariable("id") Long id) {
+        productRepo.save(product);
+        return "redirect:/category/all";
+    }
+
     @PostMapping("/{category}")
     public String search(@RequestParam String search, Model model, @PathVariable String category) {
         search = search.trim();
