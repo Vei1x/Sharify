@@ -10,4 +10,7 @@ This repository contains a team project assignment that is a part of the Accentu
 1. Registration system
 2. Filter and search function
 3. Database use
-4. Simple UI for best UX
+4. Managing list of products
+5. Simple UI for best UX
+
+## Main features:
