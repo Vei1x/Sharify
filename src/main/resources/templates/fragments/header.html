@@ -34,6 +34,9 @@
                     <div class="d-flex justify-content-end">
                         <div class="widget-header">
                             <small class="title text-muted">Mans Sharify</small>
+                            <div th:if="${#authorization.expression('isAuthenticated()')}" th:text="'Hello, ' + ${#authentication.getName()}">
+                                <a href="/logout">Iziet</a>
+                            </div>
                             <div th:if="${#authorization.expression('isAuthenticated()')}">
                                 <a href="/logout">Iziet</a>
                             </div>

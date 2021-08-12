@@ -41,22 +41,30 @@
                 <div class="card">
                     <article class="card-body card-body-w355" style="width: 500px">
                         <h4 class="card-title mt-2">Jūsu sludinājums</h4>
-                        <form action="/category/product/add" method="post">
-                           
+                        <form action="#" th:action="@{/category/product/add}" th:object="${product}" method="post">
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label>Nosaukums</label>
-                                    <input class="form-control" name="title" placeholder="" type="text">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Nosaukums" type="text" th:field="*{title}" /></td>
+                                        <td style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"> title
+                                    </div>
                                 </div> <!-- form-group end.// -->
                                 <div class="col form-group">
                                     <label>Drošības nauda</label>
-                                    <input class="form-control" name="bail" placeholder="" type="text">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Drošības nauda" type="text" th:field="*{bail}" /></td>
+                                        <td style="color:red" th:if="${#fields.hasErrors('bail')}" th:errors="*{bail}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                             </div> <!-- form-row end.// -->
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label> Cena par 1 stundu</label>
-                                    <input class="form-control" name="price" placeholder="" type="text">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Cena par 1 stundu" type="text" th:field="*{price}" /></td>
+                                        <td th:if="${#fields.hasErrors('price')}" th:errors="*{price}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                                 <div class="form-group col-md-6">
                                     <label>Kategorijas</label>
@@ -73,27 +81,42 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Vārds</label>
-                                    <input class="form-control" name="seller" placeholder="Vārds" type="name">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Vārds" type="text" th:field="*{seller}" /></td>
+                                        <td style="color:red" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                                 <div class="form-group col-md-6">
                                     <label>Adrese</label>
-                                    <input class="form-control" name="address" placeholder="Adrese" type="adress">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Adrese" type="text" th:field="*{address}" /></td>
+                                        <td style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                             </div> <!-- form-row.// -->
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Pilsēta</label>
-                                    <input class="form-control" name="city" placeholder="Pilsēta" type="city">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Pilsēta" type="text" th:field="*{city}" /></td>
+                                        <td style="color:red" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                                 <div class="form-group col-md-6">
                                     <label>Mob.Numurs</label>
-                                    <input class="form-control" name="phoneNumber" placeholder="Numurs" type="mobile">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="Mob.Numurs" type="text" th:field="*{phoneNumber}" /></td>
+                                        <td  th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                             </div> <!-- form-row.// -->
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label>E-pasts</label>
-                                    <input class="form-control" name="email" placeholder="E-pasts" type="email">
+                                    <div style="color:red">
+                                        <td><input class="form-control" placeholder="E-pasts" type="text" th:field="*{email}" /></td>
+                                        <td style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                                    </div>
                                 </div> <!-- form-group end.// -->
                             </div> <!-- form-row.// -->
                             <div class="form-group">

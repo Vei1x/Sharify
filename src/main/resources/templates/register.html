@@ -41,14 +41,17 @@
                 <div class="card">
                     <article class="card-body card-body-w350" style="width: 355px">
                         <h4 class="card-title mb-4 mt-1">Reģistrēties</h4>
-                        <form action="/register" method="post">
+                        <form action="#" th:action="@{/register}" th:object="${user}" method="post">
                             <div class="form-group">
                                 <label>Jūsu e-pasts</label>
                                 <input class="form-control" name="username" placeholder="Email" type="email">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <label>Parole</label>
-                                <input name="password" class="form-control" placeholder="******" type="password">
+                                <div style="color:red">
+                                <td><input class="form-control" placeholder="*****" type="text" th:field="*{password}" /></td>
+                                <td  th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                                </div>
                             </div> <!-- form-group// -->
                             <div class="form-group">
                                 <button class="btn btn-primary btn-block" type="submit"> Reģistrēties</button>

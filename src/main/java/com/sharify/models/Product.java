@@ -1,22 +1,36 @@
 package com.sharify.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String category;
+    @NotBlank(message = "Please input the title")
+    @Size( max = 30, min=2, message = "The title length need to be from 5 to 300 characters")
     private String title;
+    @PositiveOrZero(message = "Price cannot be lower than 0")
+    @NotNull(message = "Price field cannot be empty")
     private Float price;
+    @PositiveOrZero(message = "Bail cannot be lower than 0")
+    @NotNull(message = "Bail field cannot be empty")
     private Float bail;
 
+    @Size( max = 30, min=2, message = "The name length need to be from 2 to 30 characters")
+    @NotBlank(message = "Please input your name")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Name must consist only from latin characters")
     private String seller;
+    @NotBlank(message = "Please input your address")
     private String address;
+    @NotBlank(message = "Please input your city")
     private String city;
+    @NotNull(message = "Please input your phone number")
     private Integer phoneNumber;
+    @NotBlank(message = "Please input your email")
+    @Email(message = "Please input your email in valid form example@email.com")
     private String email;
 
     @OneToOne

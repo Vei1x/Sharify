@@ -5,8 +5,10 @@ import com.sharify.repos.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -36,17 +38,15 @@ public class ProductController {
     }
 
     @GetMapping("/product/add")
-    public String add(Model model) {
+    public String add(Product product) {
         return "add";
     }
 
     @PostMapping("/product/add")
-    public String add(@RequestParam String title, @RequestParam Float price,
-                      @RequestParam String category, @RequestParam Float bail,
-                      @RequestParam String seller, @RequestParam String address,
-                      @RequestParam String city, @RequestParam Integer phoneNumber,
-                      @RequestParam String email) {
-        Product product = new Product(category, title, price, bail, seller, address, city, phoneNumber, email);
+    public String add(@Valid Product product, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "add";
+        }
         productRepo.save(product);
         return "redirect:/category/all";
     }

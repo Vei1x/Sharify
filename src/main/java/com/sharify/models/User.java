@@ -1,6 +1,7 @@
 package com.sharify.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
 @Entity
@@ -10,6 +11,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String username;
+    @NotBlank(message = "For registration you need to add password")
     private String password;
     private boolean active;
 
