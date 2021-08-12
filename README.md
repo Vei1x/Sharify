@@ -13,4 +13,3 @@ This repository contains a team project assignment that is a part of the Accentu
 4. Managing list of products
 5. Simple UI for best UX
 
-## Main features:
