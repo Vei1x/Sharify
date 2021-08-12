@@ -25,6 +25,7 @@ public class Product {
     private String seller;
     @NotBlank(message = "Please input your address")
     private String address;
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "City must consist only from latin characters")
     @NotBlank(message = "Please input your city")
     private String city;
     @NotNull(message = "Please input your phone number")
