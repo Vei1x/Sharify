@@ -64,8 +64,11 @@ public class ProductController {
     }
 
     @PostMapping("/product/edit/{id}")
-    public String edit(@ModelAttribute("product") Product product,
+    public String edit(@ModelAttribute("product") @Valid  Product product, BindingResult bindingResult,
                          @PathVariable("id") Long id) {
+        if (bindingResult.hasErrors()) {
+            return "edit";
+        }
         productRepo.save(product);
         return "redirect:/category/all";
     }
